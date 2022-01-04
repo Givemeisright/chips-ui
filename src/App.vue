@@ -1,6 +1,8 @@
 <template>
- <div>hahaha</div>
- <Layout/>
+ <div> 导航 |<router-link to="/"> page 1 </router-link>|<router-link to="/a"> page 2 </router-link></div>
+ <hr>
+ 
+ <router-view>
 </template>
 
 <script>
