@@ -1,15 +1,15 @@
 <template>
-    <div>
-        switch文档
-    </div>
+  <div>
+      <Switch/>
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import Switch from '../lib/Switch.vue';
+
+export default {
+  components: { Switch },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

@@ -10,6 +10,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+*:focus{
+  outline: none;
+}
 ul,
 ol {
   list-style: none;
