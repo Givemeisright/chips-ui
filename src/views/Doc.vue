@@ -31,6 +31,7 @@ import { inject, Ref } from "vue";
 export default {
   components: { TopNav },
   setup() {
+    //   inject接收menuVisible的值
     const menuVisible = inject<Ref<boolean>>("menuVisible");
     return { menuVisible };
   },
@@ -46,6 +47,7 @@ aside {
   top: 0;
   left: 0;
   padding-top: 70px;
+  height: 100%;
   > h2 {
     margin-bottom: 4px;
   }
