@@ -1,14 +1,15 @@
 <template>
-  <button>
+  <button class="chips-button" :class="`theme-${theme}`">
     <slot />
   </button>
 </template>
 
 <script lang="ts">
 export default {
-  setup() {
-    return {};
+  props: {
+    theme: { type: String, default: "button" },
   },
+  setup(props, context) {},
 };
 </script>
 
