@@ -1,6 +1,6 @@
 <template>
-  <button :class="{ checked: check }">
-    <span @click="toggle" :class="{ checked: check }"></span>
+  <button class="chips-switch-button" :class="{ 'chips-button-checked': check }">
+    <span class="chips-switch-span" @click="toggle" :class="{ 'chips-span-checked': check }"></span>
   </button>
 </template>
 
@@ -21,10 +21,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.chips-switch-button {
   height: $h;
   width: $h * 2;
   border: none;
@@ -32,12 +32,12 @@ button {
   border-radius: $h/2;
   position: relative;
   transition: background 250ms ease-in-out;
-  &.checked {
+  &.chips-button-checked {
     background: rgb(18, 199, 33);
   }
 }
 
-span {
+.chips-switch-span {
   position: absolute;
   top: 2px;
   left: 2px;
@@ -46,7 +46,7 @@ span {
   background: white;
   border-radius: $h2 / 2;
   transition: all 250ms ease-in-out;
-  &.checked {
+  &.chips-span-checked {
     left: calc(100% - #{$h2} - 2px);
   }
   &:hover {
