@@ -1,16 +1,18 @@
 <template>
   <template v-if="visible">
-    <div class="chips-dialog-overlay"></div>
+    <div @click="onCloseOnClickOverlay" class="chips-dialog-overlay"></div>
     <div class="chips-dialog-wrapper">
       <div class="chips-dialog">
-        <header>标题 <span class="chips-dialog-close"></span></header>
+        <header>
+          标题 <span @click="close" class="chips-dialog-close"></span>
+        </header>
         <main>
           <p>第一行字</p>
           <p>第二行字</p>
         </main>
         <footer>
-          <Button level="main">确定</Button>
-          <Button>取消</Button>
+          <Button @click="ok" level="main">确定</Button>
+          <Button @click="cancel">取消</Button>
         </footer>
       </div>
     </div>
@@ -19,7 +21,7 @@
 
 <script lang="ts">
 import Button from "./Button.vue";
-import { Ref } from 'vue';
+import { ref } from "vue";
 
 export default {
   props: {
@@ -27,12 +29,36 @@ export default {
       type: Boolean,
       default: false,
     },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true,
+    },
+    ok: Function,
+    cancel: Function,
   },
   components: {
     Button,
   },
-  setup() {
-    return {};
+  setup(props, context) {
+    const close = () => {
+      context.emit("update:visible", false);
+    };
+    const onCloseOnClickOverlay = () => {
+      if (props.closeOnClickOverlay) {
+        close();
+      }
+    };
+    const ok = () => {
+      // 相当于props.ok?.()!==false
+      if (props.ok && props.ok() !== false) {
+        close();
+      }
+    };
+    const cancel = () => {
+      context.emit("cancel");
+      close();
+    };
+    return { close, onCloseOnClickOverlay, ok, cancel };
   },
 };
 </script>
