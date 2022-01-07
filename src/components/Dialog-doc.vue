@@ -7,7 +7,18 @@
     :closeOnClickOverlay="false"
     :ok="ok"
     :cancel="cancel"
-  />
+  >
+  <template v-slot:title>
+      <div>
+          弹窗
+      </div>
+  </template>
+  <template v-slot:content>
+     <div><h3><strong>描述:</strong></h3></div>
+    <div><p>细节描述</p></div>
+  </template>
+    
+  </Dialog>
 </template>
 
 <script lang="ts">

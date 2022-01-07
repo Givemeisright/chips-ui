@@ -4,11 +4,11 @@
     <div class="chips-dialog-wrapper">
       <div class="chips-dialog">
         <header>
-          标题 <span @click="close" class="chips-dialog-close"></span>
+          <slot name="title" />
+          <span @click="close" class="chips-dialog-close"></span>
         </header>
         <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
+          <slot name="content" />
         </main>
         <footer>
           <Button @click="ok" level="main">确定</Button>
