@@ -1,22 +1,24 @@
 <template>
-  <template v-if="visible">
-    <div @click="onCloseOnClickOverlay" class="chips-dialog-overlay"></div>
-    <div class="chips-dialog-wrapper">
-      <div class="chips-dialog">
-        <header>
-          <slot name="title" />
-          <span @click="close" class="chips-dialog-close"></span>
-        </header>
-        <main>
-          <slot name="content" />
-        </main>
-        <footer>
-          <Button @click="ok" level="main">确定</Button>
-          <Button @click="cancel">取消</Button>
-        </footer>
+  <teleport to="body">
+    <template v-if="visible">
+      <div @click="onCloseOnClickOverlay" class="chips-dialog-overlay"></div>
+      <div class="chips-dialog-wrapper">
+        <div class="chips-dialog">
+          <header>
+            <slot name="title" />
+            <span @click="close" class="chips-dialog-close"></span>
+          </header>
+          <main>
+            <slot name="content" />
+          </main>
+          <footer>
+            <Button @click="ok" level="main">确定</Button>
+            <Button @click="cancel">取消</Button>
+          </footer>
+        </div>
       </div>
-    </div>
-  </template>
+    </template>
+  </teleport>
 </template>
 
 <script lang="ts">
@@ -55,7 +57,8 @@ export default {
       }
     };
     const cancel = () => {
-      context.emit("cancel");
+        // 相当于props.cancel?.()
+      props.cancel && props.cancel();
       close();
     };
     return { close, onCloseOnClickOverlay, ok, cancel };
