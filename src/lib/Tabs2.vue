@@ -6,7 +6,7 @@
         v-for="(title, index) in titles"
         :ref="
           (el) => {
-            if (el) navItems[index] = el;
+            if (title==selected) selectedItem = el;
           }
         "
         :key="index"
@@ -31,7 +31,7 @@
 
 <script lang="ts">
 import Tab from "./Tab.vue";
-import { computed, onMounted, onUpdated, ref } from "vue";
+import {  onMounted, onUpdated, ref } from "vue";
 export default {
   props: {
     selected: String,
@@ -44,11 +44,6 @@ export default {
         throw new Error("Tabs组件内只能使用Tab标签");
       }
     });
-    const current = computed(() => {
-      return defaults.filter((tag) => {
-        return tag.props.title === props.selected;
-      })[0];
-    });
     const titles = defaults.map((tags) => {
       return tags.props.title;
     });
@@ -56,23 +51,18 @@ export default {
       context.emit("update:selected", title);
     };
     // 创建ref用于保存div数组
-    const navItems = ref<HTMLDivElement[]>([]);
+    const selectedItem = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
     const randers = () => {
-      const divs = navItems.value;
-      //   筛选出被含有selected的类，即被选中的div
-      const result = divs.filter((div) =>
-        div.classList.contains("selected")
-      )[0];
       //   获得被选中标题的宽度
-      const width = result.getBoundingClientRect().width;
+      const width = selectedItem.value.getBoundingClientRect().width;
       //   把宽度设置传给对应div
       indicator.value.style.width = width + "px";
       //   获取包裹导航栏的div左边的距离
       const leftOld = container.value.getBoundingClientRect().left;
       //   获取当前选中导航栏的div左边的距离
-      const leftNew = result.getBoundingClientRect().left;
+      const leftNew = selectedItem.value.getBoundingClientRect().left;
       //   相减得到显示在页面中的位置
       const left = leftNew - leftOld;
       //   设置到样式中
@@ -86,8 +76,7 @@ export default {
       defaults,
       titles,
       select,
-      current,
-      navItems,
+      selectedItem,
       indicator,
       container,
     };
