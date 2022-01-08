@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="chips-tabs-nav" ref="container">
-      <!-- ref配合v-for把传入的titles依次存到navItems数组中 -->
       <div
         class="chips-tabs-nav-item"
         v-for="(title, index) in titles"
@@ -18,12 +17,13 @@
       </div>
       <div class="chips-tabs-nav-indicator" ref="indicator"></div>
     </div>
-
     <div class="chips-tabs-content">
       <component
-        class="chips-tabs-content-item"
-        :is="current"
-        :key="selected"
+        class="chips-tabs-content-items"
+        v-for="(component, index) in defaults"
+        :class="{ selected: component.props.title === selected }"
+        :is="component"
+        :key="index"
       />
     </div>
   </div>
@@ -82,7 +82,6 @@ export default {
     onMounted(randers);
     // 数据更新时执行
     onUpdated(randers);
-
     return {
       defaults,
       titles,
@@ -105,7 +104,6 @@ $border-color: #d9d9d9;
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
-    position: relative;
     &-item {
       padding: 8px 0;
       margin: 0 16px;
@@ -116,19 +114,25 @@ $border-color: #d9d9d9;
       &.selected {
         color: $blue;
       }
-    }
-    &-indicator {
-      position: absolute;
-      height: 3px;
-      background: $blue;
-      left: 0;
-      bottom: -1px;
-      width: 50px;
-      transition: all 250ms linear;
+      &-indicator {
+        position: absolute;
+        height: 3px;
+        background: $blue;
+        left: 0;
+        bottom: -1px;
+        width: 50px;
+        transition: all 250ms linear;
+      }
     }
   }
   &-content {
     padding: 8px 0;
+    &-items {
+      display: none;
+      &.selected {
+        display: block;
+      }
+    }
   }
 }
 </style>
