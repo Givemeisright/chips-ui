@@ -23,7 +23,6 @@
 
 <script lang="ts">
 import Button from "./Button.vue";
-import { ref } from "vue";
 
 export default {
   props: {

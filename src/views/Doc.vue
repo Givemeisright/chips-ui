@@ -1,8 +1,8 @@
 <template>
   <div class="layout">
-    <TopNav class="nav" />
+    <TopNav toggleMenuVisible colorChange class="nav" />
     <div class="content">
-      <aside v-if="menuVisible">
+      <aside :class="menuVisible ? 'show' : 'hidden'">
         <h2>组件列表</h2>
         <ol>
           <li>
@@ -19,7 +19,7 @@
           </li>
         </ol>
       </aside>
-      <main>
+      <main @click="closePop">
         <router-view />
       </main>
     </div>
@@ -35,7 +35,14 @@ export default {
   setup() {
     //   inject接收menuVisible的值
     const menuVisible = inject<Ref<boolean>>("menuVisible");
-    return { menuVisible };
+
+    const closePop = () => {
+      const width = document.documentElement.clientWidth;
+      if (width <= 500) {
+        menuVisible.value = false;
+      }
+    };
+    return { menuVisible, closePop };
   },
 };
 </script>
@@ -63,22 +70,33 @@ export default {
     flex-shrink: 0;
   }
   > main {
-    margin-top:0px;
+    // position: fixed;
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
     flex-grow: 1;
     padding: 16px;
-    background: lightgreen;
+  }
+  > .show {
+    transform: translate(0px);
+  }
+  > .hidden {
+    transform: translate(-150px);
   }
 }
 aside {
   background: lightblue;
   width: 150px;
+  height: 100%;
   padding: 16px;
   position: fixed;
   top: 0;
   left: 0;
   padding-top: 70px;
-  height: 100%;
+  transition: all 250ms linear;
+
   z-index: 1;
+
   > h2 {
     margin-bottom: 4px;
   }
@@ -88,6 +106,7 @@ aside {
     }
   }
 }
+
 main {
   overflow: auto;
 }

@@ -7,12 +7,12 @@
         v-for="(title, index) in titles"
         :ref="
           (el) => {
-            if (title==selected) selectedItem = el;
+            if (title == selected) selectedItem = el;
           }
         "
         :key="index"
         @click="select(title)"
-        :class="{ selected: title == selected }"
+        :class="{ selected: title == current.props.title }"
       >
         {{ title }}
       </div>
@@ -73,6 +73,10 @@ export default {
       //   设置到样式中
       indicator.value.style.left = left + "px";
     };
+    // 可以使用watchEffect来代替
+    // onMounted(()=>{
+    //   watchEffect(randers)
+    // });
     // 在挂载的时候执行
     onMounted(randers);
     // 数据更新时执行
@@ -118,7 +122,7 @@ $border-color: #d9d9d9;
       background: $blue;
       left: 0;
       bottom: -1px;
-      width: 50px;
+      width: 100px;
       transition: all 250ms linear;
     }
   }

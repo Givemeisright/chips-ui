@@ -1,10 +1,21 @@
 <template>
-  <div class="topNav">
-    <span class="toggleAside" @click="toggleMenu"></span>
-    <div class="logo"><router-link to="/">logo</router-link></div>
+  <div class="topNav" :class="{ topNavColorChange: colorChange }">
+    <span v-if="toggleMenuVisible" class="toggleAside" @click="toggleMenu"
+      ><svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-menu"></use>
+      </svg>
+    </span>
+    <div class="logo">
+      <router-link to="/">
+        <svg class="icon">
+          <use xlink:href="#icon-gear"></use>
+        </svg>
+      </router-link>
+    </div>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li>
+        <router-link to="/doc">文档</router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -12,6 +23,16 @@
 <script lang="ts">
 import { inject, Ref } from "vue";
 export default {
+  props: {
+    toggleMenuVisible: {
+      type: Boolean,
+      default: false,
+    },
+    colorChange: {
+      type: Boolean,
+      default: false,
+    },
+  },
   setup() {
     // inject接收menuVisible的值
     const menuVisible = inject<Ref<boolean>>("menuVisible");
@@ -26,7 +47,6 @@ export default {
 
 <style lang="scss" scoped>
 .topNav {
-  background: pink;
   display: flex;
   padding: 16px;
   position: fixed;
@@ -36,27 +56,67 @@ export default {
   z-index: 2;
   justify-content: center;
   align-items: center;
+  &.topNavColorChange {
+    background: rgb(171, 173, 183);
+    background: linear-gradient(
+      145deg,
+      rgba(171, 173, 183, 1) 0%,
+      rgba(91, 97, 116, 1) 100%
+    );
+  }
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    ::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      display: block;
+      top:23px;
+      left: 23px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .icon {
+      animation: loading 15s linear infinite;
+      @keyframes loading {
+        /*以百分比来规定改变发生的时间 也可以通过"from"和"to",等价于0% 和 100%*/
+        0% {
+          /*rotate(2D旋转) scale(放大或者缩小) translate(移动) skew(翻转)*/
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
   }
   > .menu {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
+    border: 1px solid white;
+    border-radius: 10px;
+
     > li {
-      margin: 0 1em;
+      color: #fafafa;
+      margin: 3px 0.7em;
     }
   }
   > .toggleAside {
     display: none;
-    width: 24px;
-    height: 24px;
-    background: red;
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
+    > svg {
+      width: 24px;
+      height: 24px;
+    }
   }
   @media (max-width: 500px) {
     > .menu {
