@@ -53,7 +53,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   justify-content: center;
   align-items: center;
   &.topNavColorChange {
@@ -67,19 +67,6 @@ export default {
   > .logo {
     max-width: 6em;
     margin-right: auto;
-    ::before {
-      content: "";
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      display: block;
-      top:23px;
-      left: 23px;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.3);
-      box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
-    }
-
     .icon {
       animation: loading 15s linear infinite;
       @keyframes loading {

@@ -3,6 +3,18 @@
     <TopNav toggleMenuVisible colorChange class="nav" />
     <div class="content">
       <aside :class="menuVisible ? 'show' : 'hidden'">
+        <h2>文档</h2>
+        <ol>
+          <li>
+            <router-link to="/doc/intro">介绍</router-link>
+          </li>
+           <li>
+            <router-link to="/doc/get-started">开始</router-link>
+          </li>
+           <li>
+            <router-link to="/doc/install">安装</router-link>
+          </li>
+        </ol>
         <h2>组件列表</h2>
         <ol>
           <li>
@@ -95,7 +107,7 @@ aside {
   padding-top: 70px;
   transition: all 250ms linear;
 
-  z-index: 1;
+  z-index: 2;
 
   > h2 {
     margin-bottom: 4px;
