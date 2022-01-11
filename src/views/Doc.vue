@@ -98,7 +98,7 @@ export default {
   }
 }
 aside {
-  background: rgba(199, 199, 199, 0.9);
+  background: rgba(231, 234, 237,0.95);
   width: 150px;
   height: 100%;
   position: fixed;
@@ -106,7 +106,7 @@ aside {
   left: 0;
   padding-top: 70px;
   transition: all 250ms linear;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);
   z-index: 2;
 
   > h2 {
@@ -120,7 +120,7 @@ aside {
         text-decoration: none;
       }
       .router-link-active {
-        background: white;
+        background: rgba(255, 255, 255, 0.9);
       }
     }
   }
