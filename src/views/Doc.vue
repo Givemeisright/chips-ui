@@ -8,11 +8,12 @@
           <li>
             <router-link to="/doc/intro">介绍</router-link>
           </li>
-           <li>
-            <router-link to="/doc/get-started">开始</router-link>
-          </li>
-           <li>
+
+          <li>
             <router-link to="/doc/install">安装</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/get-started">开始</router-link>
           </li>
         </ol>
         <h2>组件列表</h2>
@@ -97,16 +98,15 @@ export default {
   }
 }
 aside {
-  background: lightblue;
+  background: rgba(199, 199, 199, 0.9);
   width: 150px;
   height: 100%;
-  padding: 16px;
   position: fixed;
   top: 0;
   left: 0;
   padding-top: 70px;
   transition: all 250ms linear;
-
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.8);
   z-index: 2;
 
   > h2 {
@@ -114,7 +114,14 @@ aside {
   }
   > ol {
     > li {
-      padding: 4px 0;
+      > a {
+        display: block;
+        padding: 4px 16px;
+        text-decoration: none;
+      }
+      .router-link-active {
+        background: white;
+      }
     }
   }
 }
