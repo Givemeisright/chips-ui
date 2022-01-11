@@ -106,11 +106,11 @@ aside {
   left: 0;
   padding-top: 70px;
   transition: all 250ms linear;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 5px 0px rgb(107, 107, 107);
   z-index: 2;
 
   > h2 {
-    margin-bottom: 4px;
+    margin: 4px 14px;
   }
   > ol {
     > li {

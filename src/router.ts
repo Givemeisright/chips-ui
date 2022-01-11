@@ -6,10 +6,14 @@ import ButtonDoc from "./components/Button-doc.vue";
 import DialogDoc from "./components/Dialog-doc.vue";
 import TabsDoc from "./components/Tabs-doc.vue";
 import SwitchDoc from "./components/Switch-doc.vue";
-import Intro from "./views/Intro.vue";
-import GetStarted from "./views/GetStarted.vue";
-import Install from "./views/Install.vue";
+// 通过h函数渲染路径
+import { h } from "vue";
+import Markdown from "./components/markdown.vue";
+
 const history = createWebHashHistory();
+// 通过跳转路径时渲染,优化代码
+const markdownH = (filename) =>
+  h(Markdown, { path: `../markdown/${filename}.md`, key: filename});
 export const router = createRouter({
   history: history,
   routes: [
@@ -19,9 +23,9 @@ export const router = createRouter({
       component: Doc,
       children: [
         { path: "", component: IndexDoc },
-        { path: "intro", component: Intro },
-        { path: "get-started", component: GetStarted },
-        { path: "install", component: Install },
+        { path: "intro", component: markdownH('intro') },
+        { path: "get-started", component: markdownH('get-started')},
+        { path: "install", component: markdownH('install')},
         { path: "switch", component: SwitchDoc },
         { path: "button", component: ButtonDoc },
         { path: "dialog", component: DialogDoc },
