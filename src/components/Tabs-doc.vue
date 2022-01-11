@@ -1,5 +1,5 @@
 <template>
-  <div id="topAnchor">
+  <div id="topAnchor" >
     <div>Tabs 示例</div>
     <h1>示例1</h1>
     <Tabs v-model:selected="link">
