@@ -9,8 +9,8 @@
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
-      <div class="demo-code">
-        <pre>&lt;Switch v-model:check="checked" /&gt;</pre>
+      <div class="demo-code markdown-body">
+        <pre>{{ Switch1Demo.__sourceCode }}</pre>
       </div>
     </div>
     <div class="demo">
@@ -21,8 +21,8 @@
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
-      <div class="demo-code">
-        <pre>&lt;Switch v-model:check="checked" disabled /&gt;</pre>
+      <div class="demo-code markdown-body">
+        <pre>{{ Switch2Demo.__sourceCode }}</pre>
       </div>
     </div>
   </div>
@@ -32,9 +32,16 @@
 import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
 import Button from "../lib/Button.vue";
-
+import "github-markdown-css";
+console.log(Switch1Demo.__sourceCode);
 export default {
   components: { Switch1Demo, Switch2Demo, Button },
+  setup() {
+    return {
+      Switch1Demo,
+      Switch2Demo,
+    };
+  },
 };
 </script>
 
