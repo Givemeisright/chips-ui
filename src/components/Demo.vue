@@ -1,19 +1,14 @@
 <template>
   <div class="demo">
-    <h2>{{component.__sourceCodeTitle}}</h2>
+    <h2>{{ component.__sourceCodeTitle }}</h2>
     <div class="demo-component">
       <component :is="component" />
     </div>
     <div class="demo-actions">
-      <Button>查看代码</Button>
+      <Button @click="codeVisible = !codeVisible">查看代码</Button>
     </div>
-    <div class="demo-code">
-      <pre
-        class="language-html"
-        v-html="
-          Prism.highlight(component.__sourceCode, Prism.languages.html, 'html')
-        "
-      ></pre>
+    <div v-if="codeVisible" class="demo-code">
+      <pre class="language-html" v-html="html"></pre>
     </div>
   </div>
 </template>
@@ -22,6 +17,7 @@
 import "prismjs";
 import "prismjs/themes/prism.css";
 import Button from "../lib/Button.vue";
+import { computed, ref } from "vue";
 const Prism = (window as any).Prism;
 export default {
   props: {
@@ -30,8 +26,16 @@ export default {
   components: {
     Button,
   },
-  setup() {
-    return { Prism };
+  setup(props) {
+    const codeVisible = ref(false);
+    const html = computed(() => {
+      return Prism.highlight(
+        props.component.__sourceCode,
+        Prism.languages.html,
+        "html"
+      );
+    });
+    return { Prism, html, codeVisible };
   },
 };
 </script>
