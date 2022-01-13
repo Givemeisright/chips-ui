@@ -1,7 +1,7 @@
 <template>
   <div>
+    <TopNav class="top" />
     <div class="topNavBanner">
-      <TopNav />
       <div class="banner">
         <h1>齿轮UI</h1>
         <h2>简单，易用，高效的UI组件库</h2>
@@ -45,7 +45,6 @@
 import TopNav from "../components/Top-nav.vue";
 export default {
   components: { TopNav },
-  setup() {},
 };
 </script>
 
@@ -53,21 +52,33 @@ export default {
 $buttonColor: #1c243e;
 $border-radius: 20px;
 $color: #fafafa;
+.top {
+  position: absolute;
+}
 .features {
   margin: 64px auto;
-  width: 400px;
   color: $buttonColor;
+  padding: 0 16px;
   @media (min-width: 800px) {
     width: 800px;
+    > ul {
+      > li {
+        width: 50%;
+      }
+    }
   }
   @media (min-width: 1200px) {
     width: 1200px;
+    > ul {
+      > li {
+        width: 33.33%;
+      }
+    }
   }
   > ul {
     display: flex;
     flex-wrap: wrap;
     > li {
-      width: 400px;
       margin: 16px 0;
       display: grid;
       justify-content: start;
@@ -93,15 +104,16 @@ $color: #fafafa;
   }
 }
 .banner {
-  padding: 120px 0;
+  padding: 55px 20px;
   color: $color;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-size: 1.4em;
+
   > .actions {
-    padding: 8px 0;
+    padding: 25px;
     a {
       margin: 0 8px;
       background: $buttonColor;

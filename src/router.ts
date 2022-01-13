@@ -13,7 +13,7 @@ import Markdown from "./components/markdown.vue";
 const history = createWebHashHistory();
 // 通过跳转路径时渲染,优化代码
 const markdownH = (filename) =>
-  h(Markdown, { path: `../markdown/${filename}.md`, key: filename});
+  h(Markdown, { path: `../markdown/${filename}.md`, key: filename });
 export const router = createRouter({
   history: history,
   routes: [
@@ -22,10 +22,10 @@ export const router = createRouter({
       path: "/doc",
       component: Doc,
       children: [
-        { path: "", component: IndexDoc },
-        { path: "intro", component: markdownH('intro') },
-        { path: "get-started", component: markdownH('get-started')},
-        { path: "install", component: markdownH('install')},
+        { path: "", redirect: "/doc/intro" },
+        { path: "intro", component: markdownH("intro") },
+        { path: "get-started", component: markdownH("get-started") },
+        { path: "install", component: markdownH("install") },
         { path: "switch", component: SwitchDoc },
         { path: "button", component: ButtonDoc },
         { path: "dialog", component: DialogDoc },

@@ -6,9 +6,10 @@
     </div>
     <div class="demo-actions">
       <Button @click="codeVisible = !codeVisible">查看代码</Button>
+      <Button id="copy" @click="handleCopy(component.__sourceCodeTitle)">复制代码</Button>
     </div>
-    <div v-if="codeVisible" class="demo-code">
-      <pre class="language-html" v-html="html"></pre>
+    <div v-if="codeVisible" class="demo-code" >
+      <pre :id="`${component.__sourceCodeTitle}`" class="language-html" v-html="html"></pre>
     </div>
   </div>
 </template>
@@ -18,6 +19,7 @@ import "prismjs";
 import "prismjs/themes/prism.css";
 import Button from "../lib/Button.vue";
 import { computed, ref } from "vue";
+import { copyDomText } from "../lib/copy.js";
 const Prism = (window as any).Prism;
 export default {
   props: {
@@ -35,7 +37,10 @@ export default {
         "html"
       );
     });
-    return { Prism, html, codeVisible };
+    const handleCopy = (codes) => {
+      copyDomText(codes);
+    };
+    return { Prism, html, codeVisible, handleCopy };
   },
 };
 </script>

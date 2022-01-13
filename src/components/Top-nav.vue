@@ -1,6 +1,6 @@
 <template>
-  <div class="topNav" :class="{ topNavColorChange: colorChange }">
-    <span v-if="toggleMenuVisible" class="toggleAside" @click="toggleMenu"
+  <div onselectstart="false" class="topNav" :class="{ topNavColorChange: colorChange }">
+    <span v-if="toggleMenuVisible" class="toggleAside" @click="toggleMenu" 
       ><svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-menu"></use>
       </svg>
