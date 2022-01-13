@@ -1,11 +1,11 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 import Home from "./views/Home.vue";
 import Doc from "./views/Doc.vue";
-import IndexDoc from "./components/Index-doc.vue";
 import ButtonDoc from "./components/Button-doc.vue";
 import DialogDoc from "./components/Dialog-doc.vue";
 import TabsDoc from "./components/Tabs-doc.vue";
 import SwitchDoc from "./components/Switch-doc.vue";
+import BackTopDoc from "./components/BackTop-doc.vue";
 // 通过h函数渲染路径
 import { h } from "vue";
 import Markdown from "./components/markdown.vue";
@@ -30,6 +30,7 @@ export const router = createRouter({
         { path: "button", component: ButtonDoc },
         { path: "dialog", component: DialogDoc },
         { path: "tabs", component: TabsDoc },
+        { path: "back-top", component: BackTopDoc },
       ],
     },
   ],

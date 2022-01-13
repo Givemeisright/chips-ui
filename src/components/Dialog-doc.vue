@@ -12,7 +12,7 @@ import Demo from "./Demo.vue";
 import Dialog1Demo from "./Dialog1.demo.vue";
 import Dialog2Demo from "./Dialog2.demo.vue";
 import { ref } from "vue";
-import Biu from "./biu.vue";
+import Biu from "../lib/BackTop.vue";
 
 export default {
   components: { Demo, Biu },

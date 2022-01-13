@@ -11,7 +11,7 @@ export default {
   props: {
     visible: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
   setup(props, context) {
@@ -59,7 +59,6 @@ export default {
   right: 30px;
   line-height: 50px;
   text-align: center;
-  margin: 0 auto;
   border-radius: 5px;
   background: rgba(150, 150, 150, 0.4);
   &:hover {

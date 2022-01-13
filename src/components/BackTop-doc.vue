@@ -1,18 +1,16 @@
 <template>
   <div>
-    <h1>Switch 组件示例</h1>
-    <Demo :component="Switch1Demo" />
-    <Demo :component="Switch2Demo" />
+    <h1>back-top文档</h1>
+    <Demo :component="BackTop1Demo" />
     <Biu v-model:visible="visible" />
   </div>
 </template>
 
 <script lang="ts">
-import Switch1Demo from "./Switch1.demo.vue";
-import Switch2Demo from "./Switch2.demo.vue";
-import Biu from "../lib/BackTop.vue";
 import Demo from "./Demo.vue";
+import BackTop1Demo from "./BackTop1.demo.vue";
 import { ref } from "vue";
+import Biu from "../lib/BackTop.vue";
 
 export default {
   components: { Demo, Biu },
@@ -20,9 +18,8 @@ export default {
     const visible = ref(false);
 
     return {
-      Switch1Demo,
-      Switch2Demo,
       visible,
+      BackTop1Demo,
     };
   },
 };

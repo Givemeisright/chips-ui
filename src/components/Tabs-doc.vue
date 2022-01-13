@@ -10,7 +10,7 @@
 import Demo from "./Demo.vue";
 import Tabs1Demo from "./Tabs1.demo.vue";
 import { ref } from "vue";
-import Biu from "./biu.vue";
+import Biu from "../lib/BackTop.vue";
 export default {
   components: {
     Demo,

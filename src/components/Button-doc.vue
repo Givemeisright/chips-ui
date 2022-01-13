@@ -17,7 +17,7 @@ import Button3Demo from "./Button3.demo.vue";
 import Button4Demo from "./Button4.demo.vue";
 import Button5Demo from "./Button5.demo.vue";
 import { ref } from "vue";
-import Biu from "./biu.vue";
+import Biu from "../lib/BackTop.vue";
 
 export default {
   components: { Demo, Biu },
