@@ -6,6 +6,7 @@
     <Demo :component="Button3Demo" />
     <Demo :component="Button4Demo" />
     <Demo :component="Button5Demo" />
+    <Biu v-model:visible="visible" />
   </div>
 </template>
 <script lang="ts">
@@ -15,15 +16,20 @@ import Button2Demo from "./Button2.demo.vue";
 import Button3Demo from "./Button3.demo.vue";
 import Button4Demo from "./Button4.demo.vue";
 import Button5Demo from "./Button5.demo.vue";
+import { ref } from "vue";
+import Biu from "./biu.vue";
+
 export default {
-  components: { Demo },
+  components: { Demo, Biu },
   setup() {
+    const visible = ref(false);
     return {
       Button1Demo,
       Button2Demo,
       Button3Demo,
       Button4Demo,
       Button5Demo,
+      visible,
     };
   },
 };

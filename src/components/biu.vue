@@ -1,5 +1,9 @@
 <template>
-  <div class="backup" v-show="visible" @click="backTop">回到过去</div>
+  <div class="backup" v-show="visible" @click="backTop">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-toTop"></use>
+    </svg>
+  </div>
 </template>
 
 <script>
@@ -11,14 +15,13 @@ export default {
     },
   },
   setup(props, context) {
-    
     var timer = null;
     window.onscroll = function () {
       //为了保证兼容性，这里取两个值，哪个有值取哪一个
       //scrollTop就是触发滚轮事件时滚轮的高度
       var scrollTop = undefined;
       scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-      scrollTop <= 500
+      scrollTop <= 100
         ? context.emit("update:visible", false)
         : context.emit("update:visible", true);
     };
@@ -54,7 +57,13 @@ export default {
   position: fixed;
   bottom: 30px;
   right: 30px;
+  line-height: 50px;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 5px;
+  background: rgba(150, 150, 150, 0.4);
   &:hover {
+    background: rgba(150, 150, 150, 0.8);
     cursor: pointer;
   }
 }

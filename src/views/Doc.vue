@@ -98,7 +98,7 @@ export default {
   }
 }
 aside {
-  background: rgba(231, 234, 237,0.95);
+  background: rgba(231, 234, 237, 0.95);
   width: 150px;
   height: 100%;
   position: fixed;

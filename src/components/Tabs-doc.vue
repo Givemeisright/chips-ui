@@ -1,5 +1,5 @@
 <template>
-  <div id="topAnchor">
+  <div>
     <h1>Tabs 示例</h1>
     <Demo :component="Tabs1Demo" />
     <Biu v-model:visible="visible" />
