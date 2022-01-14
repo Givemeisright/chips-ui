@@ -26,7 +26,7 @@ import "prismjs";
 import "prismjs/themes/prism.css";
 import Button from "../lib/Button.vue";
 import { computed, ref } from "vue";
-import { copyDomText } from "../lib/copy.js";
+import { copyDomText } from "../lib/copyDomText";
 const Prism = (window as any).Prism;
 export default {
   props: {
