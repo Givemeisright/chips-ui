@@ -14,8 +14,7 @@ export default {
   },
   setup() {
     const checked = ref(false);
-    const disabled = ref(true);
-    return { checked, disabled };
+    return { checked };
   },
 };
 </script>

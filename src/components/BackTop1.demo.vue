@@ -2,9 +2,9 @@
 常规使用
 </demo>
 <template>
-  <div>
+  <span>
     <BackTop class="BackTop" v-model:visible="v" />
-  </div>
+  </span>
 </template>
 
 <script lang="ts">
