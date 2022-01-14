@@ -5,11 +5,18 @@
       <component :is="component" />
     </div>
     <div class="demo-actions">
-      <Button @click="codeVisible = !codeVisible">查看代码</Button>
-      <Button id="copy" @click="handleCopy(component.__sourceCodeTitle)">复制代码</Button>
+      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="showCode" v-else>查看代码</Button>
+      <Button v-show="codeVisible" id="copy" @click="handleCopy(component.__sourceCodeTitle)"
+        >复制代码</Button
+      >
     </div>
-    <div v-if="codeVisible" class="demo-code" >
-      <pre :id="`${component.__sourceCodeTitle}`" class="language-html" v-html="html"></pre>
+    <div v-if="codeVisible" class="demo-code">
+      <pre
+        :id="`${component.__sourceCodeTitle}`"
+        class="language-html"
+        v-html="html"
+      ></pre>
     </div>
   </div>
 </template>
@@ -40,7 +47,9 @@ export default {
     const handleCopy = (codes) => {
       copyDomText(codes);
     };
-    return { Prism, html, codeVisible, handleCopy };
+    const showCode = () => (codeVisible.value = true);
+    const hideCode = () => (codeVisible.value = false);
+    return { Prism, html, codeVisible, handleCopy, showCode, hideCode };
   },
 };
 </script>
