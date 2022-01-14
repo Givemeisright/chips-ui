@@ -5,6 +5,12 @@ import fs from "fs";
 import { baseParse } from "@vue/compiler-core";
 
 export default {
+  // 修改生成路径默认为
+  // base: "/",
+  // assetsDir: "_assets",
+  base: "./",
+  assetsDir: "assets",
+  
   plugins: [md()],
   vueCustomBlockTransforms: {
     // 只要发现有<demo>标签,就把当前源代码除了<demo>标签以外的,放到组件的__sourceCode中
