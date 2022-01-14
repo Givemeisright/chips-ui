@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>dialog文档</h1>
+    <br />
+    <h1>Dialog 示例</h1>
     <Demo :component="Dialog1Demo" />
     <Demo :component="Dialog2Demo" />
     <Biu v-model:visible="visible" />

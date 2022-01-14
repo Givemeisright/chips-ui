@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Switch 组件示例</h1>
+    <br />
+    <h1>Switch 示例</h1>
     <Demo :component="Switch1Demo" />
     <Demo :component="Switch2Demo" />
     <Biu v-model:visible="visible" />

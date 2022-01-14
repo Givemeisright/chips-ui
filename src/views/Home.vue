@@ -27,14 +27,14 @@
             <use xlink:href="#icon-typescript"></use>
           </svg>
           <h3>基于 TypeScript</h3>
-          <p>源代码采用 TypeScript 书写（非严格检查）</p>
+          <p>源代码采用 TypeScript 书写</p>
         </li>
         <li>
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-gears"></use>
           </svg>
-          <h3>代码易读</h3>
-          <p>每个组件的源代码都极其简洁</p>
+          <h3>组和工作</h3>
+          <p>每个组件都可以独立使用或组合使用</p>
         </li>
       </ul>
     </div>

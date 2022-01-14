@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { ref } from "@vue/reactivity";
-import BackTop from "../lib/BackTop.vue";
+import {BackTop} from "../lib/index";
 export default {
   components: {
     BackTop,

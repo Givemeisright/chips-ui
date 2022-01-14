@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>back-top文档</h1>
+    <br />
+    <h1>BackTop 示例</h1>
     <Demo :component="BackTop1Demo" />
     <Biu v-model:visible="visible" />
   </div>
