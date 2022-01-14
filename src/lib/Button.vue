@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <button class="chips-button" :class="classes" :disabled="disabled">
-      <span v-if="loading" class="chips-loadingIndicator" />
-      <slot />
-    </button>
-  </div>
+  <button class="chips-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="chips-loadingIndicator" />
+    <slot />
+  </button>
 </template>
 <script lang="ts">
 import { computed } from "vue";

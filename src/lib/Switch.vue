@@ -1,18 +1,16 @@
 <template>
-  <div>
-    <button
-      class="chips-switch-button"
-      :class="{ 'chips-button-checked': check }"
+  <button
+    class="chips-switch-button"
+    :class="{ 'chips-button-checked': check }"
+    :disabled="disabled"
+  >
+    <span
+      class="chips-switch-span"
+      @click="toggle"
+      :class="{ 'chips-span-checked': check }"
       :disabled="disabled"
-    >
-      <span
-        class="chips-switch-span"
-        @click="toggle"
-        :class="{ 'chips-span-checked': check }"
-        :disabled="disabled"
-      ></span>
-    </button>
-  </div>
+    ></span>
+  </button>
 </template>
 
 <script lang="ts">
