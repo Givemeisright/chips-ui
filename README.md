@@ -1,4 +1,4 @@
-# 薯片UI
+# 齿轮UI
 
 - 这是一个基于 Vue3 / TypeScript / Scss 开发的UI库，涵盖了 Button、Switch ... 等常见 UI 组件。
 
