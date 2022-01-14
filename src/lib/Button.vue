@@ -1,8 +1,10 @@
 <template>
-  <button class="chips-button" :class="classes" :disabled="disabled">
-    <span v-if="loading" class="chips-loadingIndicator"></span>
-    <slot />
-  </button>
+  <div>
+    <button class="chips-button" :class="classes" :disabled="disabled">
+      <span v-if="loading" class="chips-loadingIndicator" />
+      <slot />
+    </button>
+  </div>
 </template>
 <script lang="ts">
 import { computed } from "vue";
@@ -26,8 +28,8 @@ export default {
     },
     loading: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   setup(props) {
     const { theme, size, level } = props;
@@ -164,18 +166,19 @@ $grey: grey;
       }
     }
   }
-  &.chips-theme-link, &.chips-theme-text {
+  &.chips-theme-link,
+  &.chips-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
-  > .chips-loadingIndicator{
+  > .chips-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
     margin-right: 4px;
-    border-radius: 8px; 
+    border-radius: 8px;
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
@@ -183,7 +186,11 @@ $grey: grey;
   }
 }
 @keyframes chips-spin {
-  0%{transform: rotate(0deg)} 
-  100%{transform: rotate(360deg)} 
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

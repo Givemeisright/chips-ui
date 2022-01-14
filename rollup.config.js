@@ -4,33 +4,28 @@ import esbuild from 'rollup-plugin-esbuild'
 import vue from 'rollup-plugin-vue'
 import scss from 'rollup-plugin-scss'
 import dartSass from 'sass';
-import {
-    terser
-} from "rollup-plugin-terser"
+import { terser } from "rollup-plugin-terser"
 
 export default {
-    input: 'src/lib/index.ts',
-    output: {
-        globals: {
-            vue: 'Vue'
-        },
-        name: 'Gear',
-        file: 'dist/lib/gearui.js',
-        format: 'umd',
-        plugins: [terser()]
+  input: 'src/lib/index.ts',
+  output: {
+    globals: {
+      vue: 'Vue'
     },
-    plugins: [
-        scss({
-            include: /\.scss$/,
-            sass: dartSass
-        }),
-        esbuild({
-            include: /\.[jt]s$/,
-            minify: process.env.NODE_ENV === 'production',
-            target: 'es2015'
-        }),
-        vue({
-            include: /\.vue$/,
-        })
-    ],
+    name: 'Gear',
+    file: 'dist/lib/gear.js',
+    format: 'umd',
+    plugins: [terser()]
+  },
+  plugins: [
+    scss({ include: /\.scss$/, sass: dartSass }),
+    esbuild({
+      include: /\.[jt]s$/,
+      minify: process.env.NODE_ENV === 'production',
+      target: 'es2015' 
+    }),
+    vue({
+      include: /\.vue$/,
+    })
+  ],
 }

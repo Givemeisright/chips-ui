@@ -5,11 +5,7 @@
       <div
         class="chips-tabs-nav-item"
         v-for="(title, index) in titles"
-        :ref="
-          (el) => {
-            if (title == selected) selectedItem = el;
-          }
-        "
+        :ref="(el) => {if (title == selected) selectedItem = el;}"
         :key="index"
         @click="select(title)"
         :class="{ selected: title == current.props.title }"

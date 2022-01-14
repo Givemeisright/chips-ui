@@ -1,16 +1,18 @@
 <template>
-  <button
-    class="chips-switch-button"
-    :class="{ 'chips-button-checked': check }"
-    :disabled="disabled"
-  >
-    <span
-      class="chips-switch-span"
-      @click="toggle"
-      :class="{ 'chips-span-checked': check }"
+  <div>
+    <button
+      class="chips-switch-button"
+      :class="{ 'chips-button-checked': check }"
       :disabled="disabled"
-    ></span>
-  </button>
+    >
+      <span
+        class="chips-switch-span"
+        @click="toggle"
+        :class="{ 'chips-span-checked': check }"
+        :disabled="disabled"
+      ></span>
+    </button>
+  </div>
 </template>
 
 <script lang="ts">
@@ -41,15 +43,16 @@ export default {
 
 <style lang="scss">
 $h: 22px;
-$h2: $h - 4px;
+$h2: 18px;
+$h3: 9px;
 .chips-switch-button {
   height: $h;
   width: $h * 2;
   border: none;
   background: #bfbfbf;
-  border-radius: $h/2;
+  border-radius: $h2;
   position: relative;
-  transition: background 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
   &.chips-button-checked {
     background: rgb(18, 199, 33);
   }
@@ -65,7 +68,7 @@ $h2: $h - 4px;
   height: $h2;
   width: $h2;
   background: white;
-  border-radius: $h2 / 2;
+  border-radius: $h3;
   transition: all 250ms ease-in-out;
 
   &.chips-span-checked {
@@ -73,9 +76,9 @@ $h2: $h - 4px;
   }
   &:hover {
     cursor: pointer;
-    &[disabled='true'] {
-    cursor: not-allowed;
-  }
+    &[disabled="true"] {
+      cursor: not-allowed;
+    }
   }
   &:active {
     width: $h2 + 4px;
