@@ -8,17 +8,17 @@
 ### 安装
 在项目中，使用终端执行以下命令
 ```
-npm install gear-ui
+npm install gears-ui
 ```
 或者
 ```
-yarn add gear-ui
+yarn add gears-ui
 ```
 ### 引入
 ```
-import {Button, Tabs, Tab, Switch, Dialog, BackTop, openDialog, copyDomText} from "gear-ui";
+import {Button, Tabs, Tab, Switch, Dialog, BackTop, openDialog, copyDomText} from "gears-ui";
 //若发现样式不生效，可手动引入scss
-import "gear-ui/dist/lib/gear.css";
+import "gear-ui/dist/lib/gears.css";
 ```
 ### 示例
 ```
@@ -26,7 +26,7 @@ import "gear-ui/dist/lib/gear.css";
   <Button>按钮</Button>
 </template>
 <script>
-  import {Button, Tabs, Tab, Switch, Dialog, BackTop, openDialog, copyDomText} from "gear-ui";
+  import {Button, Tabs, Tab, Switch, Dialog, BackTop, openDialog, copyDomText} from "gears-ui";
   export default {
     components: {Button, Tabs, Tab, Switch, Dialog, BackTop}
   }

@@ -1,7 +1,7 @@
 &nbsp;
 ># 介绍
 
-* Gear UI 是一款基于 Vue 3 和 TypeScript 的 UI 组件库。
+* Gears UI 是一款基于 Vue 3 和 TypeScript 的 UI 组件库。
 
 * 这款组件库其实是我为了学习使用Vue3而制作的，全程亲手编写，尽量不采用第三方库，包括你现在看到的这个官网也几乎都是我自己写的。
 

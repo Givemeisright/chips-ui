@@ -5,7 +5,7 @@
 * 然后在你的代码中写入下面的代码
 
 * ```
-import {Button, Tabs, Tab, Switch, Dialog, BackTop, openDialog, copyDomText} from "gear-ui"
+import {Button, Tabs, Tab, Switch, Dialog, BackTop, openDialog, copyDomText} from "gears-ui"
 ```
 
 * 就可以使用我提供的组件了。
@@ -21,7 +21,7 @@ import {Button, Tabs, Tab, Switch, Dialog, BackTop, openDialog, copyDomText} fro
   </div>
 </template>
 <script>
-import {Button, Tabs, Tab, Switch, Dialog, BackTop, openDialog, copyDomText} from "gear-ui"
+import {Button, Tabs, Tab, Switch, Dialog, BackTop, openDialog, copyDomText} from "gears-ui"
 export default {
   components: {Button}
 }
