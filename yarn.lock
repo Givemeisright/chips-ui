@@ -97,7 +97,7 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
-"@rollup/pluginutils@^4.1.0":
+"@rollup/pluginutils@^4.1.0", "@rollup/pluginutils@^4.1.1":
   version "4.1.2"
   resolved "https://registry.npmmirror.com/@rollup/pluginutils/download/@rollup/pluginutils-4.1.2.tgz#ed5821c15e5e05e32816f5fb9ec607cdf5a75751"
   integrity sha512-ROn4qvkxP9SyPeHaf7uQC/GPFY6L/OWy9+bd9AwcjOAWQwxRscoEyAUD8qCY5o5iL4jqQwoLk2kaTKJPb/HwzQ==
@@ -357,6 +357,11 @@ accepts@^1.3.5:
     mime-types "~2.1.24"
     negotiator "0.6.2"
 
+add@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.nlark.com/add/download/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
+  integrity sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU=
+
 ansi-regex@^5.0.1:
   version "5.0.1"
   resolved "https://registry.nlark.com/ansi-regex/download/ansi-regex-5.0.1.tgz?cache=0&sync_timestamp=1631634988487&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fansi-regex%2Fdownload%2Fansi-regex-5.0.1.tgz#082cb2c89c9fe8659a311a53bd6a4dc5301db304"
@@ -493,7 +498,7 @@ chalk@^4.1.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-"chokidar@>=2.0.0 <4.0.0", chokidar@^3.4.2:
+"chokidar@>=3.0.0 <4.0.0", chokidar@^3.4.2:
   version "3.5.2"
   resolved "https://registry.npmmirror.com/chokidar/download/chokidar-3.5.2.tgz#dba3976fcadb016f66fd365021d91600d01c1e75"
   integrity sha512-ekGhOnNVPgT77r4K/U3GDhu+FQ2S8TnK/s2KbIGXi0SZWuwkZ2QNyfWdZW+TVfn84DpEP7rLeCt2UI6bJ8GwbQ==
@@ -617,7 +622,7 @@ debug@^3.1.0:
   dependencies:
     ms "^2.1.1"
 
-debug@^4.1.1, debug@^4.3.1, debug@^4.3.2:
+debug@^4.1.1, debug@^4.3.1, debug@^4.3.2, debug@^4.3.3:
   version "4.3.3"
   resolved "https://registry.npmmirror.com/debug/download/debug-4.3.3.tgz#04266e0b70a98d4462e6e288e38259213332b664"
   integrity sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==
@@ -668,6 +673,11 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
+dom-walk@^0.1.0:
+  version "0.1.2"
+  resolved "https://registry.npmmirror.com/dom-walk/download/dom-walk-0.1.2.tgz#0c548bef048f4d1f2a97249002236060daa3fd84"
+  integrity sha1-DFSL7wSPTR8qlySQAiNgYNqj/YQ=
+
 dotenv-expand@^5.1.0:
   version "5.1.0"
   resolved "https://registry.npmmirror.com/dotenv-expand/download/dotenv-expand-5.1.0.tgz#3fbaf020bfd794884072ea26b1e9791d45a629f0"
@@ -704,6 +714,11 @@ es-module-lexer@^0.3.25:
   version "0.3.26"
   resolved "https://registry.npmmirror.com/es-module-lexer/download/es-module-lexer-0.3.26.tgz?cache=0&sync_timestamp=1633649003753&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fes-module-lexer%2Fdownload%2Fes-module-lexer-0.3.26.tgz#7b507044e97d5b03b01d4392c74ffeb9c177a83b"
   integrity sha1-e1BwROl9WwOwHUOSx0/+ucF3qDs=
+
+es-module-lexer@^0.9.3:
+  version "0.9.3"
+  resolved "https://registry.npmmirror.com/es-module-lexer/download/es-module-lexer-0.9.3.tgz#6f13db00cc38417137daf74366f535c8eb438f19"
+  integrity sha1-bxPbAMw4QXE32vdDZvU1yOtDjxk=
 
 esbuild@^0.8.12:
   version "0.8.57"
@@ -851,6 +866,14 @@ glob@^7.1.6:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
+global@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.nlark.com/global/download/global-4.4.0.tgz#3e7b105179006a323ed71aafca3e9c57a5cc6406"
+  integrity sha1-PnsQUXkAajI+1xqvyj6cV6XMZAY=
+  dependencies:
+    min-document "^2.19.0"
+    process "^0.11.10"
+
 globby@^11.0.0:
   version "11.0.4"
   resolved "https://registry.nlark.com/globby/download/globby-11.0.4.tgz?cache=0&sync_timestamp=1631632967192&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fglobby%2Fdownload%2Fglobby-11.0.4.tgz#2cbaff77c2f2a62e71e9b2813a67b97a3a3001a5"
@@ -962,6 +985,11 @@ ignore@^5.1.4:
   version "5.2.0"
   resolved "https://registry.npmmirror.com/ignore/download/ignore-5.2.0.tgz#6d3bac8fa7fe0d45d9f9be7bac2fc279577e345a"
   integrity sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==
+
+immutable@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmmirror.com/immutable/download/immutable-4.0.0.tgz#b86f78de6adef3608395efb269a91462797e2c23"
+  integrity sha512-zIE9hX70qew5qTUjSS7wi1iwj/l7+m54KWU247nhM3v806UdGj1yDndXj+IOYxxtW9zyLI+xqFNZjTuDaLUqFw==
 
 inflight@^1.0.4:
   version "1.0.6"
@@ -1089,10 +1117,20 @@ jest-worker@^26.2.1:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
 
+joycon@^3.0.1:
+  version "3.1.1"
+  resolved "https://registry.npmmirror.com/joycon/download/joycon-3.1.1.tgz#bce8596d6ae808f8b68168f5fc69280996894f03"
+  integrity sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==
+
 js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.nlark.com/js-tokens/download/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha1-GSA/tZmR35jjoocFDUZHzerzJJk=
+
+jsonc-parser@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.nlark.com/jsonc-parser/download/jsonc-parser-3.0.0.tgz#abdd785701c7e7eaca8a9ec8cf070ca51a745a22"
+  integrity sha1-q914VwHH5+rKip7IzwcMpRp0WiI=
 
 jsonfile@^6.0.1:
   version "6.1.0"
@@ -1272,6 +1310,13 @@ mimic-fn@^2.1.0:
   version "2.1.0"
   resolved "https://registry.nlark.com/mimic-fn/download/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha1-ftLCzMyvhNP/y3pptXcR/CCDQBs=
+
+min-document@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.npmmirror.com/min-document/download/min-document-2.19.0.tgz#7bd282e3f5842ed295bb748cdd9f1ffa2c824685"
+  integrity sha1-e9KC4/WELtKVu3SM3Z8f+iyCRoU=
+  dependencies:
+    dom-walk "^0.1.0"
 
 minimatch@^3.0.4:
   version "3.0.4"
@@ -1488,6 +1533,11 @@ prismjs@^1.26.0:
   resolved "https://registry.npmmirror.com/prismjs/download/prismjs-1.26.0.tgz#16881b594828bb6b45296083a8cbab46b0accd47"
   integrity sha512-HUoH9C5Z3jKkl3UunCyiD5jwk0+Hz0fIgQ2nbwU2Oo/ceuTAQAg+pPVnfdt2TJWRVLcxKh9iuoYDUSc8clb5UQ==
 
+process@^0.11.10:
+  version "0.11.10"
+  resolved "https://registry.npmmirror.com/process/download/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
+  integrity sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==
+
 pump@^3.0.0:
   version "3.0.0"
   resolved "https://registry.nlark.com/pump/download/pump-3.0.0.tgz#b4a2116815bde2f4e1ea602354e8c75565107a64"
@@ -1576,6 +1626,24 @@ rollup-plugin-dynamic-import-variables@^1.1.0:
     globby "^11.0.0"
     magic-string "^0.25.7"
 
+rollup-plugin-esbuild@^4.8.2:
+  version "4.8.2"
+  resolved "https://registry.npmmirror.com/rollup-plugin-esbuild/download/rollup-plugin-esbuild-4.8.2.tgz#c097b93cd4b622e62206cadb5797589f548cf48c"
+  integrity sha512-wsaYNOjzTb6dN1qCIZsMZ7Q0LWiPJklYs2TDI8vJA2LUbvtPUY+17TC8C0vSat3jPMInfR9XWKdA7ttuwkjsGQ==
+  dependencies:
+    "@rollup/pluginutils" "^4.1.1"
+    debug "^4.3.3"
+    es-module-lexer "^0.9.3"
+    joycon "^3.0.1"
+    jsonc-parser "^3.0.0"
+
+rollup-plugin-scss@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.nlark.com/rollup-plugin-scss/download/rollup-plugin-scss-3.0.0.tgz#35ad0adc614217e0278e702d8a674820faa0929e"
+  integrity sha1-Na0K3GFCF+AnjnAtimdIIPqgkp4=
+  dependencies:
+    rollup-pluginutils "^2.3.3"
+
 rollup-plugin-terser@^7.0.2:
   version "7.0.2"
   resolved "https://registry.nlark.com/rollup-plugin-terser/download/rollup-plugin-terser-7.0.2.tgz#e8fbba4869981b2dc35ae7e8a502d5c6c04d324d"
@@ -1600,7 +1668,7 @@ rollup-plugin-web-worker-loader@^1.3.1:
   resolved "https://registry.npmmirror.com/rollup-plugin-web-worker-loader/download/rollup-plugin-web-worker-loader-1.6.1.tgz#9d7a27575b64b0780fe4e8b3bc87470d217e485f"
   integrity sha1-nXonV1tksHgP5OizvIdHDSF+SF8=
 
-rollup-pluginutils@^2.8.2:
+rollup-pluginutils@^2.3.3, rollup-pluginutils@^2.8.2:
   version "2.8.2"
   resolved "https://registry.nlark.com/rollup-pluginutils/download/rollup-pluginutils-2.8.2.tgz#72f2af0748b592364dbd3389e600e5a9444a351e"
   integrity sha1-cvKvB0i1kjZNvTOJ5gDlqURKNR4=
@@ -1611,6 +1679,13 @@ rollup@^2.32.1:
   version "2.63.0"
   resolved "https://registry.npmmirror.com/rollup/download/rollup-2.63.0.tgz#fe2f7fec2133f3fab9e022b9ac245628d817c6bb"
   integrity sha512-nps0idjmD+NXl6OREfyYXMn/dar3WGcyKn+KBzPdaLecub3x/LrId0wUcthcr8oZUAcZAR8NKcfGGFlNgGL1kQ==
+  optionalDependencies:
+    fsevents "~2.3.2"
+
+rollup@^2.64.0:
+  version "2.64.0"
+  resolved "https://registry.npmmirror.com/rollup/download/rollup-2.64.0.tgz#f0f59774e21fbb56de438a37d06a2189632b207a"
+  integrity sha512-+c+lbw1lexBKSMb1yxGDVfJ+vchJH3qLbmavR+awDinTDA2C5Ug9u7lkOzj62SCu0PKUExsW36tpgW7Fmpn3yQ==
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -1626,12 +1701,14 @@ safe-buffer@5.2.1, safe-buffer@^5.1.0, safe-buffer@~5.2.0:
   resolved "https://registry.npmmirror.com/safe-buffer/download/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
   integrity sha1-Hq+fqb2x/dTsdfWPnNtOa3gn7sY=
 
-sass@1.26.10:
-  version "1.26.10"
-  resolved "https://registry.npmmirror.com/sass/download/sass-1.26.10.tgz#851d126021cdc93decbf201d1eca2a20ee434760"
-  integrity sha512-bzN0uvmzfsTvjz0qwccN1sPm2HxxpNI/Xa+7PlUEMS+nQvbyuEK7Y0qFqxlPHhiNHb1Ze8WQJtU31olMObkAMw==
+sass@^1.48.0:
+  version "1.48.0"
+  resolved "https://registry.npmmirror.com/sass/download/sass-1.48.0.tgz#b53cfccc1b8ab4be375cc54f306fda9d4711162c"
+  integrity sha512-hQi5g4DcfjcipotoHZ80l7GNJHGqQS5LwMBjVYB/TaT0vcSSpbgM8Ad7cgfsB2M0MinbkEQQPO9+sjjSiwxqmw==
   dependencies:
-    chokidar ">=2.0.0 <4.0.0"
+    chokidar ">=3.0.0 <4.0.0"
+    immutable "^4.0.0"
+    source-map-js ">=0.6.2 <2.0.0"
 
 selfsigned@^1.10.8:
   version "1.10.11"
@@ -1679,7 +1756,7 @@ slash@^3.0.0:
   resolved "https://registry.nlark.com/slash/download/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha1-ZTm+hwwWWtvVJAIg2+Nh8bxNRjQ=
 
-source-map-js@^1.0.1:
+"source-map-js@>=0.6.2 <2.0.0", source-map-js@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmmirror.com/source-map-js/download/source-map-js-1.0.1.tgz?cache=0&sync_timestamp=1636400772640&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fsource-map-js%2Fdownload%2Fsource-map-js-1.0.1.tgz#a1741c131e3c77d048252adfa24e23b908670caf"
   integrity sha512-4+TN2b3tqOCd/kaGRJ/sTYA0tR0mdXx26ipdolxcwtJVqEnqNYvlCAt1q3ypy4QMlYus+Zh34RNtYLoq2oQ4IA==
